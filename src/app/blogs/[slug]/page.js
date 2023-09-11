@@ -1,6 +1,7 @@
 import { allBlogs } from '@/.contentlayer/generated'
 import Tag from '@/src/components/Elements/Tag'
 import Image from 'next/image'
+import BlogDetails from '@/src/components/Blog/BlogDetails'
 
 export default function BlogPage({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug)
@@ -10,7 +11,7 @@ export default function BlogPage({ params }) {
             <div>Blog not found or loading...</div>
         </div>
     );
-  }
+  } else {
 
   return (
     <article>
@@ -21,7 +22,7 @@ export default function BlogPage({ params }) {
             {blog.title}
           </h1>
         </div>
-        <div className='absolute top-0 right-0 bottom-0 left-0 h-full bg-dark/60'>
+        <div className='absolute top-0 right-0 bottom-0 left-0 h-full bg-dark/60' />
           <Image
             src={blog.image.filePath.replace("../public", "")}
             placeholder="blur"
@@ -31,8 +32,8 @@ export default function BlogPage({ params }) {
             height={blog.image.height}
             className="aspect-square w-full h-full object-center object-cover"
           />
-        </div>
       </div>
+      <BlogDetails blog={blog} />
     </article>
-  );
+  )};
 }
