@@ -6,7 +6,7 @@ import Tag from '../Elements/Tag'
 
 const BlogLayoutThree = ({blog}) => {
     return <div className='group flex flex-col items-center text-dark'>
-        <Link href={blog.url_path} className='h-full rounded-xl overflow-hidden'>
+        <Link href={blog.url} className='h-full rounded-xl overflow-hidden'>
             <Image 
                 src={blog.image.filePath.replace("../public", "")}
                 placeholder="blur"
@@ -19,7 +19,7 @@ const BlogLayoutThree = ({blog}) => {
 
         <div className="flex flex-col w-full mt-4">
         <span className='uppercase text-accent font-semibold text-sm'>{blog.tags[0]}</span>
-        <Link href={blog.url_path} className="group inline-block my-1">
+        <Link href={blog.url} className="group inline-block my-1">
           <h2 className="font-semibold capitalize text-lg ">
             <span className="bg-gradient-to-r from-accent to-accent bg-[length:0px_6px] group-hover:bg-[length:100%-6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500">
               {blog.title}
