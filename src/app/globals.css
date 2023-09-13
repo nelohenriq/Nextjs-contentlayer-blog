@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1>a>.icon.icon-link:before,
+h2>a>.icon.icon-link:before,
+h3>a>.icon.icon-link:before {
+    content: "#";
+    font-size: 0.8rem;
+}
+
+h2>a, h3>a{
+    text-decoration: none !important;
+}
+
+/* Apply styles to all tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  /* Style table headers */
+  th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Style table cells */
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  

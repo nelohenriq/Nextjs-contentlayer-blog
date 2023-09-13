@@ -2,6 +2,9 @@ import { makeSource, defineDocumentType } from "@contentlayer/source-files";
 import readingTime from "reading-time";
 import Image from 'next/image'
 import remarkGfm from 'remark-gfm'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypePrettyCode from 'rehype-pretty-code'
 
 const mdxComponents = {
   Image
@@ -61,5 +64,5 @@ export default makeSource({
   /* options */
   contentDirPath: "content",
   documentTypes: [Blog],
-  mdx: { remarkPlugins: [remarkGfm] }
+  mdx: { remarkPlugins: [remarkGfm], rehypePlugins:[rehypeSlug, [rehypeAutolinkHeadings, {behavior: 'append'}], [rehypePrettyCode, codeoptions]] }
 });
